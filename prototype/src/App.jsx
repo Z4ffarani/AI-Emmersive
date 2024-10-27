@@ -13,10 +13,10 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const soundcarFiles = [
-    '../src/content/sample-1.flac',
-    '../src/content/sample-2.flac',
-    '../src/content/sample-3.flac',
-    '../src/content/sample-4.flac'
+    './src/content/sample-1.flac',
+    './src/content/sample-2.flac',
+    './src/content/sample-3.flac',
+    './src/content/sample-4.flac'
   ];
 
   const soundcarNames = ['E•Tron', 'Zoomer', 'Viper', 'Gryze'];
@@ -73,12 +73,12 @@ function App() {
   return (
     <main>
       <div className='principal'>
-        <img src="logo-formula-emmersive.png" alt="Logo" />
+        <img src="./logo-formula-emmersive.png" alt="Logo" />
         <video
           ref={videoRef}
           controls
           muted
-          src="../src/content/video.mp4"
+          src="./src/content/video.mp4"
           onPlay={() => {
             setIsPlaying(true);
             syncAudioWithVideo();
@@ -122,9 +122,9 @@ function App() {
           </div>
         </div>
 
-        <audio ref={broadcasterRef} src="../src/content/broadcaster.flac" />
+        <audio ref={broadcasterRef} src="./src/content/broadcaster.flac" />
         <audio ref={soundcarRef} />
-        <audio ref={backgroundRef} src="../src/content/background.flac" />
+        <audio ref={backgroundRef} src="./src/content/background.flac" />
       </div>
     </main>
   );
