@@ -1,5 +1,13 @@
 import { useRef, useEffect, useState } from 'react';
 import './App.css';
+import Logo from '../../prototype/public/logo-formula-emmersive.png'
+import Video from '../../prototype/src/content/video.mp4'
+import Broadcaster from '../../prototype/src/content/broadcaster.flac'
+import Sample1 from '../../prototype/src/content/sample-1.flac'
+import Sample2 from '../../prototype/src/content/sample-2.flac'
+import Sample3 from '../../prototype/src/content/sample-3.flac'
+import Sample4 from '../../prototype/src/content/sample-4.flac'
+import Background from '../../prototype/src/content/background.flac'
 
 function App() {
   const videoRef = useRef(null);
@@ -13,10 +21,10 @@ function App() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   const soundcarFiles = [
-    './src/content/sample-1.flac',
-    './src/content/sample-2.flac',
-    './src/content/sample-3.flac',
-    './src/content/sample-4.flac'
+    Sample1,
+    Sample2,
+    Sample3,
+    Sample4,
   ];
 
   const soundcarNames = ['E•Tron', 'Zoomer', 'Viper', 'Gryze'];
@@ -73,12 +81,12 @@ function App() {
   return (
     <main>
       <div className='principal'>
-        <img src="./logo-formula-emmersive.png" alt="Logo" />
+        <img src={Logo} alt="Logo" />
         <video
           ref={videoRef}
           controls
           muted
-          src="./src/content/video.mp4"
+          src={Video}
           onPlay={() => {
             setIsPlaying(true);
             syncAudioWithVideo();
@@ -122,9 +130,9 @@ function App() {
           </div>
         </div>
 
-        <audio ref={broadcasterRef} src="./src/content/broadcaster.flac" />
+        <audio ref={broadcasterRef} src={Broadcaster} />
         <audio ref={soundcarRef} />
-        <audio ref={backgroundRef} src="./src/content/background.flac" />
+        <audio ref={backgroundRef} src={Background} />
       </div>
     </main>
   );
